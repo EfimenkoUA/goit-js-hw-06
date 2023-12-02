@@ -8,37 +8,19 @@ class StringBuilder {
     }
 
     getValue() {
-        return this.value;
-    }
-
-    padEnd(str) {
-        this.value = this.value.split(' ');
-        this.value.push(str);
-        this.value = this.value.join('');
-        return this.value;
-    }
-
-    padStart(str) {
-        this.value = this.value.split(' ');
-        this.value.unshift(str);
-        this.value = this.value.join('');
-        return this.value;
-    }
-
-    padBoth(str) {
-        this.value = this.value.split(' ');
-        this.value.unshift(str);
-        this.value.push(str);
-        this.value = this.value.join('');
-        return this.value;
-    }
-
-    get value() {
         return this.#value;
     }
 
-    set value(newValue) {
-        this.#value = newValue;
+    padEnd(str) {
+        return this.#value = this.#value + str;
+    }
+
+    padStart(str) {
+        return this.#value = str + this.#value;
+    }
+
+    padBoth(str) {
+        return this.#value = str + this.#value + str;
     }
 
 }
